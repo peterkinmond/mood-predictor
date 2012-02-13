@@ -58,9 +58,9 @@
 
 <div id="container">
     <h2>Temp In Office</h1>
-    <input type="radio" name="office_temp" value="-3"/>Freezing<br/>
+    <input type="radio" name="office_temp" value="-2"/>Freezing<br/>
     <input type="radio" name="office_temp" value="0"/>Room temperature<br/>
-    <input type="radio" name="office_temp" value="-3"/>Boiling<br/>
+    <input type="radio" name="office_temp" value="-2"/>Boiling<br/>
 
     <h2>Time Of Day</h1>
     <input type="radio" name="time_of_day" value="-1"/> 9AM - Noon<br/>
@@ -104,7 +104,7 @@ function drawChart(rotateAngle) {
     var w = 400,
         h = 400,
         r = Math.min(w, h) / 2,
-        initialAngle = -115,
+        initialAngle = -125,
         rotation = initialAngle + rotateAngle;
         text = ['elated', 'happy', 'so-so', 'angry', 'nuclear'],
         data = d3.range(text.length).map(function() { return 1/text.length; }),
