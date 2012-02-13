@@ -115,3 +115,16 @@ nav button.control {
 .library .album .tracks {
     display: none;
 }
+
+#charted {
+    padding-left: 150px;
+    padding-top: 50px;
+    position: absolute;
+    font-size: 20px;
+}
+
+#arrowed {
+    padding-top: 216px;
+    position: absolute;
+    z-index: 10;
+}
