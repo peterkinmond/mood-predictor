@@ -11,6 +11,8 @@ body {
     height: auto;
     min-height: 80%;
     position: relative;
+    padding-left: 30px;
+    width: 500px;
 }
 
 #title {
@@ -21,7 +23,7 @@ body {
 }
 
 #container h2 {
-    background: #292929 url(../images/gradient.png?1328934255) repeat-x top;
+    background: #292929;
     color: white;
     font-weight: normal;
     padding: 5px 10px;
