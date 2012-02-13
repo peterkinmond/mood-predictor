@@ -9,8 +9,13 @@ body {
 
 #container {
   height: auto;
-  min-height: 100%;
+  min-height: 80%;
 	position: relative;
+}
+
+#title {
+  width: 100%;
+  height: 70px;
 }
 
 .albums {
@@ -81,8 +86,8 @@ nav button.control {
 .playlist .album.current .tracks .current {
 }
 
-.library {
-	margin-left: 36%;
+.chart {
+	margin-left: 500px;
 	padding: 0.1em 2%;
 }
 
