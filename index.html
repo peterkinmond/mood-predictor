@@ -23,6 +23,8 @@
     <script src="js/vendor/jquery-1.5.1.min.js"></script>
     <script src="js/vendor/underscore.js"></script>
     <script src="js/vendor/backbone.js"></script>
+    <script src="js/vendor/d3.js"></script>
+    <script src="js/vendor/d3.layout.js"></script>
     <script src="js/Tunes.js"></script>
 
     <script type="application/javascript">
@@ -81,5 +83,47 @@
 
     </div>
 </div>
+
+    <script type="text/javascript">
+var rotateChart = function(rotateAngle) {
+  d3.select("body").selectAll("g.arc").attr("transform", "translate(200,200)rotate(" + rotateAngle +")");
+};
+
+var w = 400,
+    h = 400,
+    r = Math.min(w, h) / 2,
+    initialDegrees = -115,
+    text = ['elated', 'happy', 'so-so', 'angry', 'nuclear'],
+    data = d3.range(text.length).map(function() { return 1/text.length; }),
+    colours = ['#2ca02c', '#98df8a', "#ff7f0e", '#ff9896',"#d62728"],
+    colour = d3.scale.ordinal().range(colours),
+    donut = d3.layout.pie(),
+    arc = d3.svg.arc().innerRadius(r * .5).outerRadius(r);
+
+var vis = d3.select("body #charted")
+  .append("svg")
+    .data([data])
+    .attr("width", w)
+    .attr("height", h);
+
+var arcs = vis.selectAll("g.arc")
+    .data(donut)
+  .enter().append("g")
+    .attr("class", "arc")
+    .attr("transform", "translate(" + r + "," + r + ")rotate(" + initialDegrees + ")");
+
+arcs.append("path")
+    .attr("fill", function(d, i) { return colour(i); })
+    .attr("d", arc);
+
+arcs.append("text")
+    .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")rotate(" + (-1 * initialDegrees) + ")"; })
+    .attr("dy", ".35em")
+    .attr("text-anchor", "middle")
+    .attr("display", function(d) { return null; })
+    .attr("class", "pie-piece")
+    .text(function(d, i) { return text[i]; });
+
+    </script>
 </body>
 </html>
