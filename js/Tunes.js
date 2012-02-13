@@ -24,5 +24,7 @@
             office_temp += parseInt($(this).val());
             alterMood(this, office_temp);
         });
+
+        drawChart(0);
     });
 })(jQuery);
