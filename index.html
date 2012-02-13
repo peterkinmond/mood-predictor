@@ -43,14 +43,14 @@
 <body>
 <div id="container">
     <h1>Time Of Day</h1>
-    <input type="radio" name="time_of_day" value="morning"/> 9AM - Noon<br/>
-    <input type="radio" name="time_of_day" value="afternoon"/> Noon - 3pm<br/>
-    <input type="radio" name="time_of_day" value="evening"/> 3pm - 6pm<br/>
+    <input type="radio" name="time_of_day" value="-1"/> 9AM - Noon<br/>
+    <input type="radio" name="time_of_day" value="0"/> Noon - 3pm<br/>
+    <input type="radio" name="time_of_day" value="-3"/> 3pm - 6pm<br/>
 
     <h1>Number Of Dogs In Office</h1>
-    <input type="radio" name="number_of_dogs" value="zero"/>0<br/>
-    <input type="radio" name="number_of_dogs" value="one"/>1<br/>
-    <input type="radio" name="number_of_dogs" value="two"/>2 or more (enough to run around engineering)<br/>
+    <input type="radio" name="number_of_dogs" value="0"/>0<br/>
+    <input type="radio" name="number_of_dogs" value="0"/>1<br/>
+    <input type="radio" name="number_of_dogs" value="-3"/>2 or more (enough to run around engineering)<br/>
 
     <h1>Other Factors</h1>
     <input type="checkbox" name="vehicle" value="Bike" onclick="alterMood(this, 1)">Something good</input><br/>
