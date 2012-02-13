@@ -1,21 +1,35 @@
 html, body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #container {
-  height: auto;
-  min-height: 80%;
-	position: relative;
+    height: auto;
+    min-height: 80%;
+    position: relative;
 }
 
 #title {
-  width: 100%;
-  height: 70px;
+    width: 100%;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#container h2 {
+    background: #292929 url(../images/gradient.png?1328934255) repeat-x top;
+    color: white;
+    font-weight: normal;
+    padding: 5px 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 
 .albums {
@@ -87,8 +101,9 @@ nav button.control {
 }
 
 .chart {
-	margin-left: 500px;
-	padding: 0.1em 2%;
+    margin-left: 500px;
+    padding: 0.1em 2%;
+    position: relative;
 }
 
 .library .album .queue.remove {
