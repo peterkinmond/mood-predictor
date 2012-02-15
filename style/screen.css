@@ -5,6 +5,7 @@ html, body {
 body {
     margin: 0;
     padding: 0;
+    font-family: "Helvetica Neue", "Helvetica", "Calibri", "sans"
 }
 
 #container {
@@ -34,86 +35,10 @@ body {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 
-.albums {
-    list-style: none;
-    padding: 0 2%;
-}
-
-.album {
-    list-style: none;
-    display: inline-block;
-    position: relative;
-    width: 80%;
-    margin: 0;
-    padding: 1em 2em;
-}
-
-.album .artist-name {
-}
-
-.album .tracks {
-    margin: 0;
-    padding: .5em 0 0 1.5em;
-}
-
-.album button.queue {
-    position: absolute;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-.playlist {
-    position: absolute;
-    width: 30%;
-    padding: 0 3%;
-    min-height: 100%;
-}
-
-nav {
-    width: 180px;
-    margin: auto;
-    padding: 0;
-}
-
-nav button.control {
-    text-indent: -9999px;
-    width: 55px;
-    height: 50px;
-    border: 0;
-    padding: 10px;
-    margin: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-.playlist .album .queue.add {
-    display: none;
-}
-
-.playlist .album.current {
-}
-
-.playlist .album.current .tracks .current {
-}
-
 .chart {
     margin-left: 500px;
     padding: 0.1em 2%;
     position: relative;
-}
-
-.library .album .queue.remove {
-    display: none;
-}
-
-.library .album .tracks {
-    display: none;
 }
 
 #charted {
