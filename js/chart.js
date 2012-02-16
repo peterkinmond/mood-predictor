@@ -33,6 +33,6 @@
             alterMood(this, cups_of_coffee);
         });
 
-        drawChart(0);
+        drawChart(36 * -2);
     });
 })(jQuery);
