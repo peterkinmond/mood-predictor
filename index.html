@@ -152,13 +152,13 @@
         angle = angle + initialAngle;
 
         var arcs = d3.select('body #charted')
-                .selectAll('g.arc')
-                .transition()
+                .selectAll('g.arc');
+
+        arcs.transition()
                 .duration(1000)
                 .attr("transform", "translate(200,200)rotate(" + angle + ")");
 
-        var arcs = d3.select('body #charted')
-                .selectAll('g.arc text')
+        arcs.selectAll('text')
                 .transition()
                 .duration(1000)
                 .attr("transform", function (d) {
