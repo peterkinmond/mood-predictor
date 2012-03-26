@@ -155,12 +155,12 @@
                 .selectAll('g.arc');
 
         arcs.transition()
-                .duration(1000)
+                .duration(800)
                 .attr("transform", "translate(200,200)rotate(" + angle + ")");
 
         arcs.selectAll('text')
                 .transition()
-                .duration(1000)
+                .duration(500)
                 .attr("transform", function (d) {
                     return "translate(" + arc.centroid(d) + ")rotate(" + (-1 * angle) + ")";
                 });
