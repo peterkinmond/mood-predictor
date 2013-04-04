@@ -21,29 +21,6 @@
     <script src="js/vendor/d3.js"></script>
     <script src="js/vendor/d3.layout.js"></script>
     <script src="js/chart.js"></script>
-
-    <script type="application/javascript">
-        var mood_number = 8;   // Perfect mood is 10, start with 8
-
-        function alterMood(checkbox, amount) {
-            if (checkbox.checked) {
-                mood_number += amount;
-            }
-            else {
-                mood_number -= amount;
-            }
-            $('#mood_number').text(mood_number);
-
-            var offset = mood_number;
-            if (mood_number > 10) {
-                offset = 10;
-            }
-            else if (mood_number <= 1) {
-                offset = 1.5;
-            }
-            redrawChart(offset * 36);
-        }
-    </script>
 </head>
 
 <body>
@@ -85,9 +62,7 @@
         <img src="images/arrow.png"/>
     </div>
 
-    <div id="charted">
-
-    </div>
+    <div id="charted"></div>
 </div>
 
 <div id="footer">
