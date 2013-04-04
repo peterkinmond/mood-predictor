@@ -2,7 +2,7 @@
   "title": "Engineering Mood Analyzer",
   "questions": [
     {
-      "text": "Main Portion Of Day Spent Doing",
+      "text": "Main Portion Of Day Spent",
       "type": "radio",
       "answers": [
         {
@@ -10,38 +10,16 @@
           "value": 2
         },
         {
-          "text": "Bug Fixes",
+          "text": "Fixing Bugs",
           "value": -1
         },
         {
-          "text": "CSS Fixes",
+          "text": "Fixing cross-browser CSS",
           "value": -2
         },
         {
-          "text": "Network Connectivity Fixes",
+          "text": "Fixing Network Connectivity",
           "value": -3
-        }
-      ]
-    },
-    {
-      "text": "Cups Of Coffee Consumed",
-      "type": "radio",
-      "answers": [
-        {
-          "text": "0 (grrrrrr)",
-          "value": -1
-        },
-        {
-          "text": "1 (ah)",
-          "value": 1
-        },
-        {
-          "text": "2 (ahhhhhhhhhh!)",
-          "value": 2
-        },
-        {
-          "text": "3 or more (AHHHHHHHH!!!!!1!)",
-          "value": -2
         }
       ]
     },
@@ -104,6 +82,10 @@
         },
         {
           "text": "New tech to play with",
+          "value": 2
+        },
+        {
+          "text": "Had a beer on the roof",
           "value": 2
         }
       ]
