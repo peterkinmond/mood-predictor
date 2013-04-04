@@ -2,12 +2,17 @@ $(function() {
     var initialMood = 8;   // Perfect mood is 10, start with 8
     $('#chart').data('moodNumber', initialMood);
 
-    $.getJSON("pair_mood.json", function(json) {
+   $.getJSON(loadFile(), function(json) {
       createGame(json);
     });
 
     drawChart(36 * -2);
 });
+
+function loadFile() {
+  return ($.url().param('type') === undefined) ? 'pair.json' :
+    $.url().param('type') + '.json';
+}
 
 function createGame(game) {
   $('#titleText').html(game.title);

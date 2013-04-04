@@ -1,0 +1,112 @@
+{
+  "title": "Engineering Mood Analyzer",
+  "questions": [
+    {
+      "text": "Main Portion Of Day Spent Doing",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "Building Shit",
+          "value": 2
+        },
+        {
+          "text": "Bug Fixes",
+          "value": -1
+        },
+        {
+          "text": "CSS Fixes",
+          "value": -2
+        },
+        {
+          "text": "Network Connectivity Fixes",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "text": "Cups Of Coffee Consumed",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "0 (grrrrrr)",
+          "value": -1
+        },
+        {
+          "text": "1 (ah)",
+          "value": 1
+        },
+        {
+          "text": "2 (ahhhhhhhhhh!)",
+          "value": 2
+        },
+        {
+          "text": "3 or more (AHHHHHHHH!!!!!1!)",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "text": "Number Of Meetings",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "0",
+          "value": 2
+        },
+        {
+          "text": "1",
+          "value": 0
+        },
+        {
+          "text": "2",
+          "value": -2
+        },
+
+        {
+          "text": "3 or more",
+          "value": -4
+        }
+      ]
+    },
+    {
+      "text": "Opinion Bias",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "Wayne",
+          "value": 5
+        },
+        {
+          "text": "Chris",
+          "value": 2
+        },
+        {
+          "text": "MR",
+          "value": -1
+        },
+        {
+          "text": "Ryan",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "text": "Other Factors",
+      "type": "checkbox",
+      "answers": [
+        {
+          "text": "Reveille cookies straight from the oven!!",
+          "value": 3
+        },
+        {
+          "text": "Reveille out of cookies",
+          "value": -2
+        },
+        {
+          "text": "New tech to play with",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}
