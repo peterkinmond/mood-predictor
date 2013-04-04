@@ -2,13 +2,32 @@ $(function() {
     var initialMood = 8;   // Perfect mood is 10, start with 8
     $('#chart').data('moodNumber', initialMood);
 
-    setQuestionListener('office_temp');
-    setQuestionListener('cups_of_coffee');
-    setQuestionListener('time_of_day');
-    setQuestionListener('number_of_dogs');
+    $.getJSON("game.json", function(json) {
+      createGame(json);
+    });
 
     drawChart(36 * -2);
 });
+
+function createGame(game) {
+  $('#titleText').html(game.title);
+
+  $(game.questions).each(function(questionIndex, question) {
+    var questionName = "question" + questionIndex;
+    createQuestion(questionName, question);
+    setQuestionListener(questionName);
+  });
+}
+
+function createQuestion(questionName, question) {
+  $('#container').append('<h2>' + question.text + '</h2>');
+
+  $(question.answers).each(function(answerIndex, answer) {
+    $('#container').append('<input type="' + question.type +
+      '" name=' + questionName + ' value="' +
+      answer.value + '"/>' + answer.text + '<br/>');
+  });
+}
 
 function setQuestionListener(questionText) {
     $("input[name='" + questionText + "']").change(function(e) {

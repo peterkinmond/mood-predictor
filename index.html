@@ -25,31 +25,10 @@
 
 <body>
 <div id="title">
-    <h1>Pair Mood Predictor</h1>
+    <h1 id="titleText"></h1>
 </div>
 
 <div id="container">
-    <h2>Temp In Office</h2>
-    <input type="radio" name="office_temp" value="-2"/>Freezing<br/>
-    <input type="radio" name="office_temp" value="0"/>Room temperature<br/>
-    <input type="radio" name="office_temp" value="-2"/>Boiling<br/>
-
-    <h2>Cups Of Coffee Consumed</h2>
-    <input type="radio" name="cups_of_coffee" value="-1"/>0 (grrrrrr)<br/>
-    <input type="radio" name="cups_of_coffee" value="1"/>1 (ah)<br/>
-    <input type="radio" name="cups_of_coffee" value="2"/>2 (ahhhhhhhhh!)<br/>
-    <input type="radio" name="cups_of_coffee" value="-2"/>3 or more (AHHHHHHHH!!!!!1!)<br/>
-
-    <h2>Time Of Day</h2>
-    <input type="radio" name="time_of_day" value="-1"/> 9am - Noon<br/>
-    <input type="radio" name="time_of_day" value="0"/> Noon - 3pm<br/>
-    <input type="radio" name="time_of_day" value="-3"/> 3pm - 6pm<br/>
-
-    <h2>Number Of Dogs In Office</h2>
-    <input type="radio" name="number_of_dogs" value="0"/>0<br/>
-    <input type="radio" name="number_of_dogs" value="0"/>1<br/>
-    <input type="radio" name="number_of_dogs" value="-3"/>2 or more (enough to run around engineering)<br/>
-
     <h2>Other Factors</h2>
     <input type="checkbox" name="vehicle" value="Bike" onclick="alterMood(this, -1)">Elevator broken (again)</input><br/>
     <input type="checkbox" name="vehicle" value="Bike" onclick="alterMood(this, -2)">Music blaring</input><br/>

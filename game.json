@@ -1,0 +1,81 @@
+{
+  "title": "Pair Mood Predictor",
+  "questions": [
+    {
+      "text": "Temp In Office",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "Freezing",
+          "value": -2
+        },
+        {
+          "text": "Room temperature",
+          "value": 0
+        },
+        {
+          "text": "Boiling",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "text": "Cups Of Coffee Consumed",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "0 (grrrrrr)",
+          "value": -1
+        },
+        {
+          "text": "1 (ah)",
+          "value": 1
+        },
+        {
+          "text": "2 (ahhhhhhhhhh!)",
+          "value": 2
+        },
+        {
+          "text": "3 or more (AHHHHHHHH!!!!!1!)",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "text": "Time Of Day",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "9am - Noon",
+          "value": -1
+        },
+        {
+          "text": "Noon - 3pm",
+          "value": 0
+        },
+        {
+          "text": "3pm - 6pm",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "text": "Number Of Dogs In Office",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "0",
+          "value": 0
+        },
+        {
+          "text": "1",
+          "value": 0
+        },
+        {
+          "text": "2 or more (enough to run around engineering)",
+          "value": -3
+        }
+      ]
+    }
+  ]
+}
