@@ -76,6 +76,24 @@
           "value": -3
         }
       ]
+    },
+    {
+      "text": "Other Factors",
+      "type": "checkbox",
+      "answers": [
+        {
+          "text": "Elevator broken (again)",
+          "value": -1
+        },
+        {
+          "text": "Music blaring",
+          "value": -2
+        },
+        {
+          "text": "Someone brought in doughnuts/cake",
+          "value": 3
+        }
+      ]
     }
   ]
 }

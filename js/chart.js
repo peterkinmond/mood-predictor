@@ -15,7 +15,9 @@ function createGame(game) {
   $(game.questions).each(function(questionIndex, question) {
     var questionName = "question" + questionIndex;
     createQuestion(questionName, question);
-    setQuestionListener(questionName);
+    if (question.type === "radio") {
+      setQuestionListener(questionName);
+    }
   });
 }
 
@@ -23,9 +25,18 @@ function createQuestion(questionName, question) {
   $('#container').append('<h2>' + question.text + '</h2>');
 
   $(question.answers).each(function(answerIndex, answer) {
-    $('#container').append('<input type="' + question.type +
-      '" name=' + questionName + ' value="' +
-      answer.value + '"/>' + answer.text + '<br/>');
+    var input = document.createElement('input');
+    input.setAttribute("type", question.type);
+    input.setAttribute("name", questionName);
+    input.setAttribute("value", answer.value);
+
+    if (question.type === "checkbox") {
+      input.setAttribute("onclick", "alterMood(this, " + answer.value + ")");
+    }
+
+    $('#container').append(input);
+    $('#container').append(answer.text);
+    $('#container').append("<br/>");
   });
 }
 
