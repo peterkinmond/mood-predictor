@@ -1,5 +1,5 @@
-Pair Mood Predictor
-===================
+Mood Predictor
+==============
 
 Pair Programming? Wondering how your pair's doing? Find out with this handy Mood Predictor.
 
