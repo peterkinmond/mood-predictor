@@ -87,6 +87,10 @@
         {
           "text": "Had a beer on the roof",
           "value": 2
+        },
+        {
+          "text": "Brittany comes to visit",
+          "value": 3
         }
       ]
     }
