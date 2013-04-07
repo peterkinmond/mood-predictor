@@ -187,6 +187,8 @@ function rotateChart(angle) {
     var colours = getSpinnerColours();
 
     d3.selectAll('path')
+            .transition()
+            .duration(3000)
             .style('fill', function(d,i) {
               return colours[i];
             });
