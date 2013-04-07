@@ -1,5 +1,5 @@
 $(function() {
-    var initialMood = 8;   // Perfect mood is 10, start with 8
+    var initialMood = 7;   // Perfect mood is 10, start with 7
     $('#chart').data('moodNumber', initialMood);
 
    $.getJSON(loadFile(), function(json) {
@@ -76,7 +76,50 @@ function alterMood(checkbox, amount) {
     else if (moodNumber <= 1) {
         offset = 1.5;
     }
-    redrawChart(offset * 36);
+    rotateChart(offset * 36);
+}
+
+function isReallyPissedOff() {
+  var moodNumber = $('#chart').data('moodNumber');
+  var angerLimit = -5;
+
+  return moodNumber <= angerLimit;
+}
+
+function isReallyHappy() {
+  var moodNumber = $('#chart').data('moodNumber');
+  var happyLimit = 19;
+
+  return moodNumber >= happyLimit;
+}
+
+function getSpinnerColours() {
+  // Colour chart:
+  // [ Dark Green, Light Green, Orange, Pink, Red ]
+  // ['#2ca02c', '#98df8a', "#ff7f0e", '#ff9896', "#d62728"]
+
+  if (isReallyHappy()) {
+    return ['#2ca02c','#2ca02c','#2ca02c','#2ca02c','#2ca02c'];
+  }
+  else if (isReallyPissedOff()) {
+    return ["#d62728", "#d62728", "#d62728", "#d62728", "#d62728"];
+  }
+  else {
+    return ['#2ca02c', '#98df8a', "#ff7f0e", '#ff9896', "#d62728"];
+  }
+}
+
+function getSpinnerText() {
+  // Make text match colour
+  if (isReallyHappy()) {
+    return ['elated', 'elated', 'elated', 'elated', 'elated'];
+  }
+  else if (isReallyPissedOff()) {
+    return ['nuclear', 'nuclear', 'nuclear', 'nuclear', 'nuclear'];
+  }
+  else {
+    return ['elated', 'happy', 'so-so', 'angry', 'nuclear'];
+  }
 }
 
 function drawChart(rotateAngle) {
@@ -84,12 +127,12 @@ function drawChart(rotateAngle) {
             h = 400,
             r = Math.min(w, h) / 2,
             initialAngle = -125,
-            rotation = initialAngle + rotateAngle;
-    text = ['elated', 'happy', 'so-so', 'angry', 'nuclear'],
+            rotation = initialAngle + rotateAngle,
+            text = getSpinnerText(),
             data = d3.range(text.length).map(function () {
                 return 1 / text.length;
             }),
-            colours = ['#2ca02c', '#98df8a', "#ff7f0e", '#ff9896', "#d62728"],
+            colours = getSpinnerColours();
             colour = d3.scale.ordinal().range(colours),
             donut = d3.layout.pie(),
             arc = d3.svg.arc().innerRadius(r * .5).outerRadius(r);
@@ -129,7 +172,7 @@ function drawChart(rotateAngle) {
             });
 }
 
-function redrawChart(angle) {
+function rotateChart(angle) {
     var initialAngle = -125;
     angle = angle + initialAngle;
 
@@ -140,7 +183,18 @@ function redrawChart(angle) {
             .duration(800)
             .attr("transform", "translate(200,200)rotate(" + angle + ")");
 
-    arcs.selectAll('text')
+    var text = getSpinnerText();
+    var colours = getSpinnerColours();
+
+    d3.selectAll('path')
+            .style('fill', function(d,i) {
+              return colours[i];
+            });
+
+    d3.selectAll('text')
+            .text(function(d,i) {
+              return text[i];
+            })
             .transition()
             .duration(500)
             .attr("transform", function (d) {
