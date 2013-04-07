@@ -81,7 +81,7 @@ function alterMood(checkbox, amount) {
 
 function isReallyPissedOff() {
   var moodNumber = $('#chart').data('moodNumber');
-  var angerLimit = -5;
+  var angerLimit = -6;
 
   return moodNumber <= angerLimit;
 }
