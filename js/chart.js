@@ -72,6 +72,16 @@ function alterMood(checkbox, amount) {
 
     $('#chart').data('moodNumber', moodNumber);
 
+    if(isReallyPissedOff()) {
+      fuckShitUp();
+    }
+    else if(isReallyHappy()) {
+      achieveEnlightenment();
+    }
+    else {
+      returnToNormal();
+    }
+
     var offset = moodNumber;
     if (moodNumber > 10) {
         offset = 10;
@@ -94,6 +104,21 @@ function isReallyHappy() {
   var happyLimit = 19;
 
   return moodNumber >= happyLimit;
+}
+
+function fuckShitUp() {
+  $('#charted').addClass('anger');
+  $('body').css('background-color', 'rgb(160, 0, 0)');
+}
+
+function achieveEnlightenment() {
+  $('#charted').addClass('elation');
+  $('body').css('background-color', 'lightgreen');
+}
+
+function returnToNormal() {
+  $('#charted').removeClass();
+  $('body').css('background-color', 'white');
 }
 
 function getSpinnerColours() {
@@ -191,7 +216,7 @@ function rotateChart(angle) {
 
     d3.selectAll('path')
             .transition()
-            .duration(3000)
+            .duration(1500)
             .style('fill', function(d,i) {
               return colours[i];
             });

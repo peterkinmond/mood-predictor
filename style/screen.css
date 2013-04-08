@@ -40,17 +40,38 @@ body {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 
+.anger {
+    background-image: url('/images/grumpy-cat.jpg');
+    background-position-y: 51%;
+    background-repeat: no-repeat;
+    background-position-x: 53%;
+    background-size: 273px;
+}
+
+.elation {
+    background-image: url('http://image.blingee.com/images17/content/output/000/000/000/5e5/514570461_1949030.gif?4');
+    background-position-y: 51%;
+    background-repeat: no-repeat;
+    background-position-x: 49%;
+    background-size: 220px;
+}
+
 .chart {
     margin-left: 500px;
     padding: 0.1em 2%;
     position: relative;
 }
 
-#charted {
+#chartPadding {
     padding-left: 150px;
     padding-top: 50px;
     position: absolute;
     font-size: 20px;
+}
+
+#charted {
+    width: 400px;
+    height: 400px;
 }
 
 #arrowed {
