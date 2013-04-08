@@ -27,6 +27,7 @@ function createGame(game) {
 }
 
 function createQuestion(questionName, question) {
+  // Question header
   $('#container').append('<h2>' + question.text + '</h2>');
 
   $(question.answers).each(function(answerIndex, answer) {
@@ -39,8 +40,10 @@ function createQuestion(questionName, question) {
       input.setAttribute("onclick", "alterMood(this, " + answer.value + ")");
     }
 
-    $('#container').append(input);
-    $('#container').append(answer.text);
+    var labelWrapper = document.createElement('label');
+    labelWrapper.appendChild(input);
+    labelWrapper.appendChild(document.createTextNode(answer.text));
+    $('#container').append(labelWrapper);
     $('#container').append("<br/>");
   });
 }
