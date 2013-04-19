@@ -1,6 +1,6 @@
 $(function() {
     var initialMood = 7;   // Perfect mood is 10, start with 7
-    $('#chart').data('moodNumber', initialMood);
+    $('#chart-container').data('moodNumber', initialMood);
 
    $.getJSON(loadFile(), function(json) {
       createGame(json);
@@ -15,7 +15,7 @@ function loadFile() {
 }
 
 function createGame(game) {
-  $('#titleText').html(game.title);
+  $('#title-text').html(game.title);
 
   $(game.questions).each(function(questionIndex, question) {
     var questionName = "question" + questionIndex;
@@ -28,7 +28,7 @@ function createGame(game) {
 
 function createQuestion(questionName, question) {
   // Question header
-  $('#container').append('<h2>' + question.text + '</h2>');
+  $('#question-container').append('<h2>' + question.text + '</h2>');
 
   $(question.answers).each(function(answerIndex, answer) {
     var input = document.createElement('input');
@@ -43,25 +43,25 @@ function createQuestion(questionName, question) {
     var labelWrapper = document.createElement('label');
     labelWrapper.appendChild(input);
     labelWrapper.appendChild(document.createTextNode(answer.text));
-    $('#container').append(labelWrapper);
-    $('#container').append("<br/>");
+    $('#question-container').append(labelWrapper);
+    $('#question-container').append("<br/>");
   });
 }
 
 function setQuestionListener(questionText) {
     $("input[name='" + questionText + "']").change(function(e) {
-        var prevAnswer = $("#chart").data(questionText);
+        var prevAnswer = $("#chart-container").data(questionText);
         var newAnswer = parseInt($(this).val());
         if (prevAnswer !== undefined) {
             alterMood(this, prevAnswer * -1); // Undo previous value
         }
-        $("#chart").data(questionText, newAnswer);
+        $("#chart-container").data(questionText, newAnswer);
         alterMood(this, newAnswer);
     });
 }
 
 function alterMood(checkbox, amount) {
-    var moodNumber = $('#chart').data('moodNumber');
+    var moodNumber = $('#chart-container').data('moodNumber');
 
     if (checkbox.checked) {
         moodNumber += amount;
@@ -70,7 +70,7 @@ function alterMood(checkbox, amount) {
         moodNumber -= amount;
     }
 
-    $('#chart').data('moodNumber', moodNumber);
+    $('#chart-container').data('moodNumber', moodNumber);
 
     if(isReallyPissedOff()) {
       fuckShitUp();
@@ -93,14 +93,14 @@ function alterMood(checkbox, amount) {
 }
 
 function isReallyPissedOff() {
-  var moodNumber = $('#chart').data('moodNumber');
+  var moodNumber = $('#chart-container').data('moodNumber');
   var angerLimit = -6;
 
   return moodNumber <= angerLimit;
 }
 
 function isReallyHappy() {
-  var moodNumber = $('#chart').data('moodNumber');
+  var moodNumber = $('#chart-container').data('moodNumber');
   var happyLimit = 19;
 
   return moodNumber >= happyLimit;

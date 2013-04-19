@@ -2,10 +2,8 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
-
     <title>What's Your Mood?</title>
     <link rel="stylesheet" href="style/screen.css" media="screen, projection">
-
     <script src="js/vendor/modernizr-1.6.min.js"></script>
     <script src="js/vendor/jquery-1.5.1.min.js"></script>
     <script src="js/vendor/purl.js"></script>
@@ -13,28 +11,27 @@
     <script src="js/vendor/d3.layout.js"></script>
     <script src="js/chart.js"></script>
   </head>
-
   <body>
-    <div id="overlay"></div>
-    <div id="title">
-      <h1 id="titleText"></h1>
-    </div>
+    <div id="page">
+      <div id="title">
+        <h1 id="title-text"></h1>
+      </div>
+      
+      <div id="question-container"></div>
 
-    <div id="container"></div>
-
-    <div id="chart" class="chart">
-      <div id='arrowed'>
-        <img src="images/arrow.gif"/>
+      <div id="chart-container">
+        <div id="arrowed">
+          <img src="images/arrow.gif"/>
+        </div>
+        <div id="chart-padding">
+          <div id="charted"></div>
+        </div>
       </div>
 
-      <div id="chartPadding">
-        <div id="charted"></div>
+      <div id="footer">
+        created by <a href="http://peterkinmond.com">peter kinmond</a>
+        using <a href="http://mbostock.github.com/d3">d3.js</a>
       </div>
-    </div>
-
-    <div id="footer">
-      created by <a href="http://peterkinmond.com">peter kinmond</a>
-      using <a href="http://mbostock.github.com/d3">d3.js</a>
     </div>
   </body>
 </html>
