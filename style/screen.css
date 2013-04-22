@@ -13,10 +13,13 @@ body {
     height: 70px;
     font-size: 30px;
     text-align: center;
+    width: 100%;
+    min-width: 800px;
 }
 
 #question-container {
     width: 40%;
+    min-width: 340px;
     padding-right: 5%;
     font-size: 18px;
     float: left;
@@ -36,18 +39,13 @@ body {
 #chart-container {
     width: 55%;
     float: right;
-}
-
-#chart-padding {
-    padding-left: 150px;
-    padding-top: 50px;
-    position: absolute;
-    font-size: 20px;
+    margin-top: 15px;
 }
 
 #charted {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
 }
 
 #arrowed {
@@ -66,18 +64,18 @@ body {
 
 .anger {
     background-image: url('../images/grumpy-cat.jpg');
-    background-position-y: 51%;
+    background-position-y: 50%;
     background-repeat: no-repeat;
-    background-position-x: 53%;
-    background-size: 273px;
+    background-position-x: 33%;
+    background-size: 54%;
 }
 
 .elation {
     background-image: url('http://image.blingee.com/images17/content/output/000/000/000/5e5/514570461_1949030.gif?4');
     background-position-y: 51%;
     background-repeat: no-repeat;
-    background-position-x: 49%;
-    background-size: 220px;
+    background-position-x: 32%;
+    background-size: 43%;
 }
 
 input {

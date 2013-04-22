@@ -6,8 +6,19 @@ $(function() {
       createGame(json);
     });
 
-    drawChart(36 * -2);
+    var chartDimensions = $('#charted').width() * 0.8;
+    drawChart(chartDimensions, chartDimensions, 36 * -2);
+    resizeChartWithWindow();
 });
+
+function resizeChartWithWindow() {
+    var chart = $("#chart");
+    $(window).on("resize", function() {
+        var targetWidth = chart.parent().width() * 0.8;
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth);
+    });
+}
 
 function loadFile() {
   return ($.url().param('type') === undefined) ? 'pair.json' :
@@ -89,7 +100,8 @@ function alterMood(checkbox, amount) {
     else if (moodNumber <= 1) {
         offset = 1.5;
     }
-    rotateChart(offset * 36);
+    var chartDimensions = $('#charted').width() * 0.8;
+    rotateChart(chartDimensions, chartDimensions, offset * 36);
 }
 
 function isReallyPissedOff() {
@@ -150,9 +162,9 @@ function getSpinnerText() {
   }
 }
 
-function drawChart(rotateAngle) {
-    var w = 400,
-            h = 400,
+function drawChart(height, width, rotateAngle) {
+    var w = width,
+            h = height,
             r = Math.min(w, h) / 2,
             initialAngle = -125,
             rotation = initialAngle + rotateAngle,
@@ -169,7 +181,10 @@ function drawChart(rotateAngle) {
             .append("svg")
             .data([data])
             .attr("width", w)
-            .attr("height", h);
+            .attr("height", h)
+            .attr("id", "chart")
+            .attr("viewBox", "0 0 " + width + " " + height)
+            .attr("preserveAspectRatio", "xMidYMid");
 
     var arcs = vis.selectAll("g.arc")
             .data(donut)
@@ -200,7 +215,7 @@ function drawChart(rotateAngle) {
             });
 }
 
-function rotateChart(angle) {
+function rotateChart(width, height, angle) {
     var initialAngle = -125;
     angle = angle + initialAngle;
 
@@ -209,7 +224,7 @@ function rotateChart(angle) {
 
     arcs.transition()
             .duration(800)
-            .attr("transform", "translate(200,200)rotate(" + angle + ")");
+            .attr("transform", "translate(" + width/2 + "," + height/2 + ")rotate(" + angle + ")");
 
     var text = getSpinnerText();
     var colours = getSpinnerColours();
