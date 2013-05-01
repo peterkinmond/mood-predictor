@@ -1,0 +1,19 @@
+{
+  "title": "Engineering Mood Analyzer",
+  "questions": [
+    {
+      "text": "Has Wayne Left Yet?",
+      "type": "radio",
+      "answers": [
+        {
+          "text": "No",
+          "value": 20
+        },
+        {
+          "text": "Yes",
+          "value": -20
+        }
+      ]
+    }
+  ]
+}
